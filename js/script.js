@@ -24,4 +24,4 @@ HorarioFuncionamento();
 AnimaisAPI();
 DoeBTC();
 
-console.log("Dev Mode");
+console.log("~Dev Mode~");
