@@ -1,4 +1,4 @@
-import initScrollSuave from './modules/scroll-suave.js';
+import ScrollSuave from './modules/scroll-suave.js';
 import darkMode from './modules/dark-mode.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
 import initAccordion from './modules/accordion.js';
@@ -11,7 +11,9 @@ import HorarioFuncionamento from './modules/horario-funcionamento.js';
 import AnimaisAPI from './modules/animaisAPI.js';
 import DoeBTC from './modules/doeBTC.js';
 
-initScrollSuave();
+const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
+scrollSuave.init();
+
 darkMode();
 initAnimacaoScroll();
 initAccordion();
@@ -24,4 +26,4 @@ HorarioFuncionamento();
 AnimaisAPI();
 DoeBTC();
 
-console.log("~Dev Mode~");
+console.log('~Dev Mode~');
