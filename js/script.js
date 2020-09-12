@@ -1,6 +1,4 @@
 import ScrollSuave from './modules/scroll-suave.js';
-import darkMode from './modules/dark-mode.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
 import initAccordion from './modules/accordion.js';
 import initTabNav from './modules/tabnav.js';
 import initModal from './modules/modal.js';
@@ -10,6 +8,8 @@ import menuMobile from './modules/menu-mobile.js';
 import HorarioFuncionamento from './modules/horario-funcionamento.js';
 import AnimaisAPI from './modules/animaisAPI.js';
 import DoeBTC from './modules/doeBTC.js';
+import darkMode from './modules/dark-mode.js';
+import initAnimacaoScroll from './modules/scroll-animacao.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
