@@ -26,5 +26,7 @@ export default class TabNav {
     // Ativar primeiro index
     this.activeTab(0);
     this.addTabNavEvent();
+
+    return this;
   }
 }
