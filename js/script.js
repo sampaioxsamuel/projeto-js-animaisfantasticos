@@ -26,13 +26,14 @@ modal.init();
 const tooltip = new ToolTip('[data-tooltip]');
 tooltip.init();
 
+AnimaisAPI('../../animaisapi.json', '.numeros-grid');
+
 darkMode();
 initAnimacaoScroll();
 
 initDropDown();
 menuMobile();
 HorarioFuncionamento();
-AnimaisAPI();
 DoeBTC();
 
 console.log('~Dev Mode~');
