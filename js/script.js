@@ -27,6 +27,7 @@ const tooltip = new ToolTip('[data-tooltip]');
 tooltip.init();
 
 AnimaisAPI('../../animaisapi.json', '.numeros-grid');
+DoeBTC('https://blockchain.info/ticker', '.btc-preco');
 
 darkMode();
 initAnimacaoScroll();
@@ -34,6 +35,5 @@ initAnimacaoScroll();
 initDropDown();
 menuMobile();
 HorarioFuncionamento();
-DoeBTC();
 
 console.log('~Dev Mode~');

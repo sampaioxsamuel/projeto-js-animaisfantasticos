@@ -1,8 +1,8 @@
-export default function doeBTC() {
-  fetch('https://blockchain.info/ticker')
+export default function doeBTC(url, target) {
+  fetch(url)
     .then((r) => r.json())
     .then((value) => {
-      const spanBTC = document.querySelector('.btc-preco');
+      const spanBTC = document.querySelector(target);
       const valor = (1000 / value.BRL.buy).toFixed(4);
       spanBTC.innerText = `${valor}`;
     });
