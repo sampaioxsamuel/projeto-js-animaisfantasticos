@@ -36,5 +36,3 @@ darkMode();
 initDropDown();
 menuMobile();
 HorarioFuncionamento();
-
-console.log('~Dev Mode~');
