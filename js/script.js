@@ -9,7 +9,7 @@ import HorarioFuncionamento from './modules/horario-funcionamento.js';
 import AnimaisAPI from './modules/animaisAPI.js';
 import DoeBTC from './modules/doeBTC.js';
 import darkMode from './modules/dark-mode.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
+import ScrollAnima from './modules/scroll-anima.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -29,8 +29,9 @@ tooltip.init();
 AnimaisAPI('../../animaisapi.json', '.numeros-grid');
 DoeBTC('https://blockchain.info/ticker', '.btc-preco');
 
+const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
+scrollAnima.init();
 darkMode();
-initAnimacaoScroll();
 
 initDropDown();
 menuMobile();
