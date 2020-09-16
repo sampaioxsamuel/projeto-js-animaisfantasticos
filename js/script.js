@@ -3,7 +3,7 @@ import Accordion from './modules/accordion.js';
 import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
 import ToolTip from './modules/tooltip.js';
-import initDropDown from './modules/dropdown.js';
+import DropDown from './modules/dropdown.js';
 import menuMobile from './modules/menu-mobile.js';
 import HorarioFuncionamento from './modules/horario-funcionamento.js';
 import AnimaisAPI from './modules/animaisAPI.js';
@@ -31,8 +31,10 @@ DoeBTC('https://blockchain.info/ticker', '.btc-preco');
 
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
+
+const dropdown = new DropDown('[data-dropdown]');
+dropdown.init();
 darkMode();
 
-initDropDown();
 menuMobile();
 HorarioFuncionamento();
