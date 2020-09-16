@@ -285,7 +285,7 @@ body {
 .js [data-anime="scroll"] {
   opacity: 0;
   transform: translate3d(-90px, 0, 0);
-  transition: 1.5s;
+  transition: .5s;
 }
 
 .js [data-anime="scroll"].ativo {
