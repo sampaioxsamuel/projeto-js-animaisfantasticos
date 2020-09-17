@@ -4,7 +4,7 @@ import TabNav from './modules/tabnav.js';
 import Modal from './modules/modal.js';
 import ToolTip from './modules/tooltip.js';
 import DropDown from './modules/dropdown.js';
-import menuMobile from './modules/menu-mobile.js';
+import MenuMobile from './modules/menu-mobile.js';
 import HorarioFuncionamento from './modules/horario-funcionamento.js';
 import AnimaisAPI from './modules/animaisAPI.js';
 import DoeBTC from './modules/doeBTC.js';
@@ -34,7 +34,11 @@ scrollAnima.init();
 
 const dropdown = new DropDown('[data-dropdown]');
 dropdown.init();
+
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="lista"]');
+menuMobile.init();
+
 darkMode();
 
-menuMobile();
+// menuMobile();
 HorarioFuncionamento();
