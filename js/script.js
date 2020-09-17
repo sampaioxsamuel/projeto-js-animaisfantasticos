@@ -41,5 +41,4 @@ menuMobile.init();
 darkMode();
 
 const funcionamento = new HorarioFuncionamento('[data-semana]', 'aberto');
-console.log(funcionamento);
 funcionamento.init();
