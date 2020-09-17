@@ -1,25 +1,41 @@
-export default function HorarioFuncionamento() {
-  const horaFuncionamento = document.querySelector('[data-hora]');
-  const funcionamento = document.querySelector('[data-semana]');
-  const ano = document.querySelector('[data-copy]');
+export default class HorarioFuncionamento {
+  constructor(funcionamento, activeClass) {
+    this.funcionamento = document.querySelector(funcionamento);
+    this.activeClass = activeClass;
+  }
 
-  /* Criando array com os dados do dataset e transformando em numero usando map */
-  const diasSemana = funcionamento.dataset.semana.split(',').map(Number);
-  const horarioSemana = horaFuncionamento.dataset.hora.split(',').map(Number);
+  dadosFuncionamento() {
+    this.diasSemana = this.funcionamento.dataset.semana.split(',').map(Number);
+    this.horarioSemana = this.funcionamento.dataset.hora.split(',').map(Number);
+  }
 
-  /* Objeto Date */
-  const dataAgora = new Date();
-  const anoAtual = dataAgora.getFullYear();
-  const diaAgora = dataAgora.getDay();
-  const horarioAgora = dataAgora.getHours();
+  dadosAgora() {
+    /* Objeto Date */
+    this.dataAgora = new Date();
+    this.diaAgora = this.dataAgora.getDay();
+    this.horarioAgora = this.dataAgora.getUTCHours() - 3;
+  }
 
-  /* Verificação */
-  ano.innerHTML = `Todos os direitos reservados ${anoAtual} &copy`;
-  const estaAbertoDia = diasSemana.indexOf(diaAgora) !== -1;
-  const estaAbertoHora = horarioAgora >= horarioSemana[0] && horarioAgora < horarioSemana[1];
+  estaAberto() {
+    const estaAbertoDia = this.diasSemana.indexOf(this.diaAgora) !== -1;
+    // vai fazer uma comparação do horario atual com o dataset dentro do index.html
+    const estaAbertoHora = this.horarioAgora >= this.horarioSemana[0]
+          && this.horarioAgora < this.horarioSemana[1];
 
-  if (estaAbertoDia && estaAbertoHora) {
-    funcionamento.classList.add('aberto');
-    funcionamento.setAttribute('title', 'Aberto');
+    return estaAbertoDia && estaAbertoHora;
+  }
+
+  ativaAberto() {
+    if (this.estaAberto()) {
+      this.funcionamento.classList.add(this.activeClass);
+    }
+  }
+
+  init() {
+    if (this.funcionamento) {
+      this.dadosFuncionamento();
+      this.dadosAgora();
+      this.ativaAberto();
+    }
   }
 }
