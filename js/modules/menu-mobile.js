@@ -6,7 +6,11 @@ export default class MenuMobile {
   constructor(button, list, events) {
     this.menuBtn = document.querySelector(button);
     this.menuList = document.querySelector(list);
-    this.eventos = events || ['click'];
+    if (events === undefined) {
+      this.eventos = ['touchstart', 'click'];
+    } else {
+      this.eventos = events;
+    }
     this.activeClass = 'active';
 
     // é preciso usaro .bind() caso use uma função de callback dentro de uma classe
@@ -18,7 +22,8 @@ export default class MenuMobile {
     this.eventos.forEach((event) => this.menuBtn.addEventListener(event, this.openMenu));
   }
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault();
     this.menuBtn.classList.add('ativo');
     this.menuList.classList.add('ativo');
     outsideClick(this.menuList, this.eventos, () => {

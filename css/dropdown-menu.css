@@ -48,3 +48,10 @@
         transform: translate3d(0px, 0px, 0px);
     }
 }
+
+@media (max-width: 700px) {
+  [data-dropdown] .dropdown-menu {
+    display: block;
+    animation: show-up .6s forwards;
+
+}
