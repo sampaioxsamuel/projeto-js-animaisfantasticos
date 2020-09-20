@@ -10,6 +10,7 @@ import AnimaisAPI from './modules/animaisAPI.js';
 import DoeBTC from './modules/doeBTC.js';
 import darkMode from './modules/dark-mode.js';
 import ScrollAnima from './modules/scroll-anima.js';
+import SlideNav from './modules/slide.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -42,3 +43,7 @@ darkMode();
 
 const funcionamento = new HorarioFuncionamento('[data-semana]', 'aberto');
 funcionamento.init();
+
+const slide = new SlideNav('.slide', '.slide-wrapper');
+slide.init();
+slide.addControl('.custom-controls');
